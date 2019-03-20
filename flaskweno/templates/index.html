@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<p> Esto es parte del index </p>
+  {% for names in name %}
+    {{ names }}
+  {% endfor %}
+  {% from "_macro.html" import show_list_h %}
+  {{ show_list_h(nombre)}}
+{% endblock %}
+
+
+{% block formulario %}
+  <form name="sentMessage" id="contactForm" method="POST">
+    {% from "_macro.html" import funcion_de_formulario %}
+      {{funcion_de_formulario(form.username)}}
+      <p>
+      {{funcion_de_formulario(form.email)}}
+      <p>
+      {{funcion_de_formulario(form.comment)}}
+      <p>
+        {{ funcion_de_formulario(form.honeypot)}}
+      <input type="submit" name="Dalle Ho!">
+  </form>
+{% endblock %}

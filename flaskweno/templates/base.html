@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"> </script>
+      <title>{% block title %} {% endblock %} </title>
+  </head>
+  <body>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+            <li> {{message}} </li>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <h4> Bienvenido al curso de Flask </h4>
+
+      {% block content %}
+      {% endblock %}
+
+      {% block formulario %}
+      {% endblock %}
+  </body>
+</html>

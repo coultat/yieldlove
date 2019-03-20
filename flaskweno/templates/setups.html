@@ -1,0 +1,8 @@
+{% extends "father.html" %}
+
+{% block content %}
+<input type="hidden" name="csrf_token" value ='{{ csrf_token() }}' />
+  {% from "_macro.html" import funcion_de_formulario %}
+    {{ funcion_de_formulario(setup.setup)}}
+
+{% endblock %}

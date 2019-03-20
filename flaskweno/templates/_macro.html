@@ -1,0 +1,19 @@
+{% macro show_list_h(value) %}
+
+  <h1>{{ value }}</h1>
+  <h2>{{ value }}</h2>
+  <h3>{{ value }}</h3>
+  <h4>{{ value }}</h4>
+  <h5>{{ value }}</h5>
+{% endmacro %}
+
+{% macro funcion_de_formulario(value) %}
+  {{ value.label }}
+  {{ value(**kwargs)|safe }}
+  {% if value.errors %}
+    <ul>
+      {% for error in value.errors %}
+      {{error}}
+      {% endfor %}
+    {% endif %}
+{% endmacro %}

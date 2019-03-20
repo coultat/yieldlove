@@ -1,0 +1,12 @@
+
+{% block content %}
+  {% if comment %}
+    {% for basura in comment.items %}
+      {{ basura.username }}
+      <p>
+        {{ date_format(basura.create_date)}}
+      <p>
+      {{ basura.text }}
+    {% endfor %}
+  {% endif %}
+{% endblock %}

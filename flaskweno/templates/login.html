@@ -1,0 +1,22 @@
+{% extends "father.html" %}
+{% block content %}
+  {% with message = get_flashed_messages() %}
+   {% if messages %}
+    {% for message in messages %}
+      <ul> {{ message }}
+    {% endfor %}
+   {% endif %}
+  {% endwith %}
+{% endblock %}
+
+{% block formulario %}
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+  Encima de esto debería haber aparecido el flash <p>
+  {% from "_macro.html" import funcion_de_formulario %}
+  {{funcion_de_formulario(login.username)}}
+  <p>
+  {{funcion_de_formulario(login.password)}}
+  <p>
+
+{% endblock %}

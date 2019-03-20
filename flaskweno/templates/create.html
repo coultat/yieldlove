@@ -1,0 +1,12 @@
+{% extends "father.html" %}
+
+{% block formulario %}
+<form name="login" id="login-form" method="POST">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  {% from "_macro.html" import funcion_de_formulario %}
+  {{funcion_de_formulario(form.username)}}
+  <p>
+  {{funcion_de_formulario(form.password)}}
+  <p>
+  {{funcion_de_formulario(form.email)}}
+{% endblock %}
