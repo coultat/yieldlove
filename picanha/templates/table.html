@@ -1,0 +1,13 @@
+{% extends "father.html" %}
+{% block content %}
+  <table>
+    {% if mapping %}
+      <h1> HELLO </h1>
+    {% for size in mapping %}
+      <tr>
+        <td> {{ size[0] }} </td> <td> {{ size[1] }}
+      </tr>
+    {% endfor %}
+    {% endif %}
+  </table>
+{% endblock %}

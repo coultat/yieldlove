@@ -1,0 +1,10 @@
+{% extends "father.html" %}
+{% block content %}
+<form method="POST" name="mapping.html">
+<input type="hidden" name="csrf_token" value={{csrf_token()}} />
+  {% for folder in folders %}
+    {{ folder.name}} y este es el path {{folder.path_display}} -> <input type="checkbox" name="check" value="{{folder.path_display}}">
+    <p>
+  {% endfor %}
+  <input type="submit" value="dalle" name="good">
+{% endblock %}
